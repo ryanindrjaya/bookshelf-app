@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Import CDN Framework CSS 'Bootstrap' -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Import Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/f540826c4d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Bookshelf App</title>
+</head>
+<body>
+
+  <header class="bg-primary text-white container-fluid shadow-sm">
+    <div class="row p-2">
+      <h1 class="h1">Bookshelf App</h1>
+    </div>
+  </header>
+
+  <main class="container py-3">
+
+    <section class="searchSection row d-flex justify-content-center my-4">
+      <div class="col-md-8 card shadow pb-3">
+        <div class="d-flex justify-content-between align-items-center mt-3"> 
+          <span class="app-title">Bookshelf</span>
+          <div class="d-flex flex-row">
+            <button class="btn btn-primary new" id="tambahBuku" onclick="showTambahBuku()"><i class="fa fa-plus"></i> Tambah buku</button> 
+          </div>
+        </div>
+        <div class="mt-3 inputs"> 
+          <i class="fa fa-search"></i><input type="text" class="form-control" id="search" placeholder="Cari buku..."> 
+        </div>
+        <ul class="display-buku" id="displayBuku">
+
+        </ul>
+      </div>
+    </section>
+
+    <section class="row my-4" id="inputSection">
+      <div class="col-md-6 card shadow-sm p-3">
+        <h2 class="text-center card-title mt-2">Masukkan Buku Baru</h2>
+        <form class="inputBuku my-3" id="inputBuku">
+          <div class="mb-3">
+            <label for="inputJudulBuku" class="form-label">Judul Buku</label>
+            <input type="text" placeholder="Masukkan judul buku" class="form-control" id="inputJudulBuku" name="inputJudulBuku" required>
+          </div>
+          <div class="mb-3">
+            <label for="inputPenulisBuku" class="form-label">Penulis</label>
+            <input type="text" placeholder="Masukkan penulis buku" class="form-control" id="inputPenulisBuku" name="inputPenulisBuku" required>
+          </div>
+          <div class="mb-3">
+            <label for="inputTahunBuku class="form-label">Tahun</label>
+            <input type="text" placeholder="Masukkan tahun terbit buku" class="form-control" id="inputTahunBuku" name="inputTahunBuku" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="inputBukuSelesai">
+            <label class="form-check-label" for="inputBukuSelesai">Selesai dibaca</label>
+          </div>
+          <button type="submit" value="Submit" name="Submit" class="btn btn-primary" class="btn btn-primary submitBuku">Masukkan Buku ke rak <b>Belum selesai dibaca</b></button>
+        </form>
+      </div>
+    </section>
+
+    <section class="statusBuku d-flex justify-content-around row gx-md-5 pt-3">
+      <div class="col-md-5 card shadow-sm">
+        <div class="d-flex flex-column justify-content-between p-3" id="add-buku">
+          <h3 class="card-title mb-3">Belum selesai dibaca.</h3>
+          <div class="list-buku" id="bukus">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 card shadow-sm">
+        <div class="d-flex flex-column justify-content-between p-3">
+          <h3 class="card-title mb-3">Selesai dibaca.</h3>
+          <div class="list-buku mb-1" id="bukus-selesai">
+  
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <div id="toast"></div>
+  <script src="script.js" type="text/javaScript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
